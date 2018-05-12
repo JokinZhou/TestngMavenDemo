@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="tests" thread-count="4" >
+  <test name="Test">
+    <classes>
+      <class name="testcase.TestOther"/>
+      <class name="testcase.TestngGroup"/>
+      <class name="testcase.TestClassGroup2"/>
+    </classes>
+  </test> <!-- Test -->
+  
+  <!-- 下面一部分配置的是testng类分组Group的xml文件内容：只运行配置在下面Class里的类中分组包含 Selenium-test组中的测试方法 -->
+    <test name="selenium">
+        <groups>
+            <run>
+                <include name="selenium-test" />
+            </run>
+        </groups>
+        <classes>
+            <class name="testcase.TestngGroup" />
+            <class name="testcase.TestClassGroup" />
+        </classes>
+    </test>
+  <!-- 上面一部分配置是testng类分组Group的xml文件内容 -->  
+    
+</suite> <!-- Suite -->
