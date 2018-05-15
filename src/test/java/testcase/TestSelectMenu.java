@@ -48,7 +48,8 @@ public class TestSelectMenu {
   
   @Test
   public void f() {
-	  wd.get("http://jqueryui.com/resources/demos/selectmenu/default.html");	  
+	  wd.get("http://jqueryui.com/resources/demos/selectmenu/default.html");
+	  //点击选择框
 	  wd.findElement(By.id("speed-button")).click();
 	  try {
 		Thread.sleep(5000);

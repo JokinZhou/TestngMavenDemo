@@ -1,69 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="4" passed="4">
+<testng-results skipped="0" failed="0" total="3" passed="3">
   <reporter-output>
-    <line>
-      <![CDATA[-------testng的日志输出方式]]>
-    </line>
   </reporter-output>
-  <suite name="Default suite" duration-ms="50" started-at="2018-05-12T13:18:50Z" finished-at="2018-05-12T13:18:50Z">
+  <suite name="Default suite" duration-ms="39" started-at="2018-05-15T04:23:26Z" finished-at="2018-05-15T04:23:26Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="50" started-at="2018-05-12T13:18:50Z" finished-at="2018-05-12T13:18:50Z">
-      <class name="testcase.TestOther3">
-        <test-method status="PASS" signature="divisionWithException()[pri:0, instance:testcase.TestOther3@731a74c]" name="divisionWithException" duration-ms="14" started-at="2018-05-12T21:18:50Z" finished-at="2018-05-12T21:18:50Z">
-          <exception class="java.lang.ArithmeticException">
-            <message>
-              <![CDATA[/ by zero]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.ArithmeticException: / by zero
-	at testcase.TestOther3.divisionWithException(TestOther3.java:31)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
-	at org.testng.TestRunner.privateRun(TestRunner.java:774)
-	at org.testng.TestRunner.run(TestRunner.java:624)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-	at org.testng.TestNG.run(TestNG.java:1048)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.ArithmeticException -->
+    <test name="Default test" duration-ms="39" started-at="2018-05-15T04:23:26Z" finished-at="2018-05-15T04:23:26Z">
+      <class name="testcase.TestParameterDataProvider">
+        <test-method status="PASS" signature="test(int, int, int)[pri:0, instance:testcase.TestParameterDataProvider@731a74c]" name="test" duration-ms="10" started-at="2018-05-15T12:23:26Z" data-provider="provideNumbers" finished-at="2018-05-15T12:23:26Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[10]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[20]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[30]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- divisionWithException -->
-        <test-method status="PASS" signature="test1()[pri:0, instance:testcase.TestOther3@731a74c]" name="test1" duration-ms="6" started-at="2018-05-12T21:18:50Z" finished-at="2018-05-12T21:18:50Z">
+        </test-method> <!-- test -->
+        <test-method status="PASS" signature="test(int, int, int)[pri:0, instance:testcase.TestParameterDataProvider@731a74c]" name="test" duration-ms="2" started-at="2018-05-15T12:23:26Z" data-provider="provideNumbers" finished-at="2018-05-15T12:23:26Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[100]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[110]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[111]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test1 -->
-        <test-method status="PASS" signature="test3()[pri:0, instance:testcase.TestOther3@731a74c]" name="test3" duration-ms="2" started-at="2018-05-12T21:18:50Z" finished-at="2018-05-12T21:18:50Z">
+        </test-method> <!-- test -->
+        <test-method status="PASS" signature="test(int, int, int)[pri:0, instance:testcase.TestParameterDataProvider@731a74c]" name="test" duration-ms="3" started-at="2018-05-15T12:23:26Z" data-provider="provideNumbers" finished-at="2018-05-15T12:23:26Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[200]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[210]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[220]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test3 -->
-        <test-method status="PASS" signature="testSplit()[pri:0, instance:testcase.TestOther3@731a74c]" name="testSplit" duration-ms="1" started-at="2018-05-12T21:18:50Z" finished-at="2018-05-12T21:18:50Z">
-          <reporter-output>
-            <line>
-              <![CDATA[-------testng的日志输出方式]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- testSplit -->
-      </class> <!-- testcase.TestOther3 -->
+        </test-method> <!-- test -->
+      </class> <!-- testcase.TestParameterDataProvider -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

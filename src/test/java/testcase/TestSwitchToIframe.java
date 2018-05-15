@@ -15,7 +15,7 @@ import page.ChromeInit;
  * @author lenovo
  *
  */
-public class TestActionMouse {
+public class TestSwitchToIframe {
 
 protected ChromeInit CI;
 protected WebDriver wd;
@@ -41,18 +41,17 @@ protected WebDriver wd;
   }
   
   @Test
-  public void f() {
-	  wd.get("https://www.baidu.com/");
-	  WebElement settings = wd.findElement(By.cssSelector("a.pf:nth-child(8)"));
-	  Actions actions = new Actions(wd);
-	  actions.moveToElement(settings).perform();//悬浮到设置处
-	  //要鼠标先滑动到悬浮处， 出现选项悬浮框后通过find定位并点击
-	  wd.findElement(By.linkText("高级搜索")).click();
-	  try {
-		Thread.sleep(3000);
-	} catch (InterruptedException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
+  public void f() throws Exception {
+	  wd.get("http://data.pharmacodia.com/web/homePage/index?ns=1&ts=1&str=YWSJ");
+	  Thread.sleep(2000);
+	  //WebDriver frameDriver =wd.switchTo().frame("rightMain");//用iframe的ID/name来定位
+	  WebDriver frameDriver =wd.switchTo().frame(0);//用iframe的index来定位，第一个是0
+	  frameDriver.findElement(By.cssSelector("div.clinical_statuslist:nth-child(1) > div:nth-child(2) > div:nth-child(1) > span:nth-child(2)"))
+	  .click();
+	  Thread.sleep(5000);
+	  //切换到Top Windows，点击权限提示上面的去登录按钮
+	  wd = frameDriver.switchTo().defaultContent();
+	  wd.findElement(By.cssSelector("#noLoginAlert > div:nth-child(3) > button:nth-child(1)")).click();
+	  Thread.sleep(5000);
   }
 }

@@ -1,6 +1,7 @@
 package testcase;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -11,11 +12,12 @@ import org.testng.annotations.Test;
 import page.ChromeInit;
 
 /**
- * 鼠标悬浮demo
+ * 1、滑动滚动条到某一个元素可见的位置demo
+ * 2、（滑动滚动条也可以直接控制滚动条），然后通过Actions的dragAndDrop()方法，按X.Y轴拖动去控制
  * @author lenovo
  *
  */
-public class TestActionMouse {
+public class TestScroll2 {
 
 protected ChromeInit CI;
 protected WebDriver wd;
@@ -41,18 +43,18 @@ protected WebDriver wd;
   }
   
   @Test
-  public void f() {
-	  wd.get("https://www.baidu.com/");
-	  WebElement settings = wd.findElement(By.cssSelector("a.pf:nth-child(8)"));
-	  Actions actions = new Actions(wd);
-	  actions.moveToElement(settings).perform();//悬浮到设置处
-	  //要鼠标先滑动到悬浮处， 出现选项悬浮框后通过find定位并点击
-	  wd.findElement(By.linkText("高级搜索")).click();
-	  try {
-		Thread.sleep(3000);
-	} catch (InterruptedException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
+  public void f() throws InterruptedException {
+	  wd.get("http://blog.csdn.net/u011541946");
+	 
+	  JavascriptExecutor je =(JavascriptExecutor)wd;
+	  //window.scrollBy(0,250)是JS代码表示 把内容滚动 在Y轴方向 滚动250像素的内容
+	  je.executeScript("window.scrollBy(0,250)", "");
+	  //je.executeScript("window.scrollBy(250,0)", "");//X轴方向滚动250像素
+	  
+	  Thread.sleep(5000);
+	  
+	  
+
+	    
   }
 }
